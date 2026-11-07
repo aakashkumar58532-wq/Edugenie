@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGenie | AI Learning Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI-POWERED LEARNING</p>
+        <h1>EduGenie</h1>
+        <p>Ask, understand, summarize, quiz yourself, and build a learning path with Gemini.</p>
+      </div>
+      <span class="status-dot">● Ready</span>
+    </header>
+
+    <section class="card">
+      <label for="task">Choose a task</label>
+      <select id="task">
+        <option value="qa">Q&amp;A</option>
+        <option value="explain">Explain a Concept</option>
+        <option value="quiz">Generate Quiz</option>
+        <option value="summarize">Summarize</option>
+        <option value="learn">Learning Path</option>
+      </select>
+
+      <label for="inputText">Your topic, question, or text</label>
+      <textarea id="inputText" rows="9" placeholder="Example: Explain the Pythagoras theorem in simple terms."></textarea>
+
+      <div class="actions">
+        <button id="submitBtn" type="button">Generate</button>
+        <button id="clearBtn" type="button" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section id="resultCard" class="card result-card hidden">
+      <div class="result-heading">
+        <h2>EduGenie Result</h2>
+        <span id="resultType"></span>
+      </div>
+      <div id="result" class="result"></div>
+    </section>
+
+    <footer>EduGenie • FastAPI + Gemini • Built for learning</footer>
+  </main>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
